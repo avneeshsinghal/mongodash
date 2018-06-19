@@ -1,6 +1,6 @@
 // SCRIPT FOR GETTING RESULT FROM DATABASE AS JSON OBJECT AND SEND TO   --> CreateTableFromJson(object)<---
 
-/*$(document).ready(function () {
+$(document).ready(function () {
     $('#dyntable').DataTable({
         columnDefs: [{
             targets: [0, 1, 2],
@@ -8,9 +8,19 @@
                 }]
     });
 
-}); */
+});
 
 $(document).ready(function () {
+
+
+
+
+ // $('input.form-control').change(function () {
+
+
+
+
+//})
 
     $("#getResult").click(function () {
 
@@ -20,66 +30,57 @@ $(document).ready(function () {
         //var tabname = document.getElementById("selected_options").value;//use jquery instead of Javascript api
 
         //window.alert(id);
-        tbl1 = $("#tbl1").val();
-        tbl2 = $("#tbl2").val();
-        key1 = $("#key1").val();
-        key2 = $("#key2").val();
-        value1 = $("#value1").val();
-        value2 = $("#value2").val();
-        action1 = $("#action1").val();
-        action2 = $("#action2").val();
 
 
+                  var params = {
 
-        var params = {
+            "tbl1": $("#tbl1").val(),
 
-            "tbl1": tbl1,
-
-            "tbl2": tbl2,
-
-
-            "key1": key1,
+            "tbl2": $("#tbl2").val(),
 
 
-            "key2": key2,
+            "key1": $("#key1").val(),
 
 
-            "value1": value1,
-
-            "value2": value2,
+            "key2": $("#key2").val(),
 
 
-            "action1": action1,
+            "value1": $("#value1").val(),
 
-            "action2": action2,
+            "value2": $("#value2").val(),
+
+
+            "action1": $("#action1").val(),
+
+            "action2": $("#action2").val(),
         };
 
 
 
 
-        if (params["value1"] === "" || params["key1"] === "") {
-            params["key1"] = "";
-            params["action1"] = "";
-        }
-        if (params["value2"] === "" || params["key2"] === "") {
-            params["key2"] = "";
-            params["action2"] = "";
-        }
+if(params["value1"]===""||params["key1"]==="")
+{params["key1"]="";
+params["action1"]="";
+}
+if(params["value2"]===""||params["key2"]==="")
+{params["key2"]="";
+params["action2"]="";
+}
 
-        var flag = 0;
-        var url = "http://" + $('#address1').val() + ":4003/table";
-
-
+  var flag = 0;
+  var url = "http://localhost:4000/table";
 
 
-        for (var key in params) {
+
+
+            for (var key in params) {
             if (params[key] !== "") {
 
                 if (flag === 1) {
                     url = url.concat("&" + key + "=" + params[key]);
                 }
                 if (flag === 0) {
-                    url = url.concat("?" + key + "=" + params[key]);
+                    url = url.concat("?"+key + "=" + params[key]);
                     flag = flag + 1;
                 }
 
@@ -121,11 +122,11 @@ $(document).ready(function () {
 
 
                 }
-                if (output.length !== 0) {
-                    CreateTableFromJSON(output);
+                if(output.length!==0){
+                CreateTableFromJSON(output);
                 }
-                if (output.length === 0) {
-                    alert("There is No data for this query")
+                if(output.length===0){
+                alert("There is No data for this query")
                 }
 
 

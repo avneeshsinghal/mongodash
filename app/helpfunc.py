@@ -2,7 +2,7 @@ from flask_mongoengine import MongoEngine
 from bson.json_util import ObjectId
 import json
 
-db_eng=MongoEngine()
+db=MongoEngine()
 
 
 def ifInt(parobj):
@@ -23,10 +23,10 @@ def get_table_keys(table_name):
     """
 
     :param table_name(string):
-    :return: returns list of table keys
+    :return: returns list of tables
     """
 
-    class Table1(db_eng.DynamicDocument):
+    class Table1(db.DynamicDocument):
         meta = {
             'collection': table_name
         }

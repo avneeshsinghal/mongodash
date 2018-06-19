@@ -9,5 +9,3 @@ USERS_COLLECTION = DATABASE.admin
 
 
 DEBUG = True
-
-# rename this file to mongo_config.py

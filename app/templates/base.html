@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    {% if title %}
-    <title>{{ title }}</title>
-    {% else %}
-    <title>Dashboard</title>
-    {% endif %}
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='/static/css/mycss.css' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    {% block head %}
-    {% endblock %}
-</head>
-
-<body>
-        {% block content %}{% endblock %}
-        {%  block table %} {%  endblock %}
-</body>
-
+    <head>
+        {% if title %}
+        <title>{{ title }}</title>
+        {% else %}
+        <title>MyBlog</title>
+        {% endif %}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='/static/css/mycss.css' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        {% block head %}{% endblock %}
+    </head>
+    <body>
+        <div>
+            {% block content %}{% endblock %}
+        </div>
+    </body>
 </html>

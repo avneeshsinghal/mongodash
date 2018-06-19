@@ -27,9 +27,7 @@ $(document).ready(function () {
 
 
     $.ajax({
-        //url: "http://"+$('#address').val()+":4000/get_all_tables",
-        url: "http://" + $('#address1').val() + ":4003/get_all_tables",
-
+        url: "http://localhost:4000/get_all_tables",
         type: 'GET',
         dataType: 'json',
         success: function (result) {
@@ -64,15 +62,16 @@ function changeHandler() {
 
         table1 = "tbl1=" + $("#tbl1").val();
 
-        if ($("#tbl1").val() === "") {
+        if($("#tbl1").val()==="")
+        {
             $("#create_key_list1").empty();
 
-            $("#key1").prop('disabled', true);
+            $("#key1").prop('disabled',true);
 
-            $("#key1").prop('value', "");
-        } else {
-            $("#key1").prop('disabled', false);
+            $("#key1").prop('value',"");
         }
+        else
+        { $("#key1").prop('disabled',false);}
 
 
 
@@ -81,7 +80,7 @@ function changeHandler() {
 
 
         $.ajax({
-            url: "http://" + $('#address1').val() + ":4003/get_tbl1_keys?" + table1,
+            url: "http://localhost:4000/get_tbl1_keys?" + table1,
             type: 'GET',
             dataType: 'json',
             success: function (result) {
@@ -108,18 +107,19 @@ function changeHandler() {
     $('#tbl2').change(function () {
 
 
-        if ($("#tbl2").val() === "") {
+         if($("#tbl2").val()==="")
+        {
             $("#create_key_list2").empty();
-            $("#key2").prop('disabled', true);
-            $("#key2").prop('value', "");
-        } else {
-            $("#key2").prop('disabled', false);
+            $("#key2").prop('disabled',true);
+          $("#key2").prop('value',"");
         }
+        else
+        { $("#key2").prop('disabled',false);}
 
 
         table2 = "tbl2=" + $("#tbl2").val();
         $.ajax({
-            url: "http://" + $('#address1').val() + ":4003/get_tbl2_keys?" + table2,
+            url: "http://localhost:4000/get_tbl2_keys?" + table2,
             type: 'GET',
             dataType: 'json',
             success: function (result) {
@@ -145,19 +145,19 @@ function changeHandler() {
 
     });
 
-    /*   $('#key2').change(function () {
-           if ($("#key2").val() === "") {
-               $("#action2").prop('disabled', true);
-               $("#value2").prop('disabled', true);
-               //$("#action2").prop('value', "");
-               //$("#value2").prop('value', "");
-           }
-           else {
-               $("#action2").prop('disabled', false);
-               $("#value2").prop('disabled', false);
-           }
+  /*   $('#key2').change(function () {
+         if ($("#key2").val() === "") {
+             $("#action2").prop('disabled', true);
+             $("#value2").prop('disabled', true);
+             //$("#action2").prop('value', "");
+             //$("#value2").prop('value', "");
+         }
+         else {
+             $("#action2").prop('disabled', false);
+             $("#value2").prop('disabled', false);
+         }
 
-       });*/
+     });*/
 
 }
 
