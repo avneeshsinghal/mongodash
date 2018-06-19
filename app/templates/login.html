@@ -13,14 +13,11 @@
             <span style="color: red;">{{ error }}</span> {% endfor %}
         </p>
         <p>
-            {% if error1 %}
-            <span style="color: red;">{{ error1 }} </span> {% endif %}
+            {% if error %}
+            <span style="color: red;">{{ error }} </span> {% endif %}
         </p>
         <button class="btn" type="submit">Submit</button>
     </form>
-</div>
-<div>
-    {{ ip }}
 </div>
 
 {% endblock %}

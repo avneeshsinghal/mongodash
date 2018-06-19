@@ -28,7 +28,7 @@ $(document).ready(function () {
 
     $.ajax({
         //url: "http://"+$('#address').val()+":4000/get_all_tables",
-        url: "http://" + $('#address1').val() + ":4000/get_all_tables",
+        url: "http://" + $('#address1').val() + ":4003/get_all_tables",
 
         type: 'GET',
         dataType: 'json',
@@ -81,7 +81,7 @@ function changeHandler() {
 
 
         $.ajax({
-            url: "http://" + $('#address1').val() + ":4000/get_tbl1_keys?" + table1,
+            url: "http://" + $('#address1').val() + ":4003/get_tbl1_keys?" + table1,
             type: 'GET',
             dataType: 'json',
             success: function (result) {
@@ -119,7 +119,7 @@ function changeHandler() {
 
         table2 = "tbl2=" + $("#tbl2").val();
         $.ajax({
-            url: "http://" + $('#address1').val() + ":4000/get_tbl2_keys?" + table2,
+            url: "http://" + $('#address1').val() + ":4003/get_tbl2_keys?" + table2,
             type: 'GET',
             dataType: 'json',
             success: function (result) {

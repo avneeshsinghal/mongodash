@@ -1,10 +1,9 @@
-function CreateTableFromJSON(myBooks) {
+function CreateTableFromJSON(data) {
 
-    // EXTRACT VALUE FOR HTML HEADER. 
-    // ('Book ID', 'Book Name', 'Category' and 'Price')
+    // EXTRACT VALUE FOR HTML HEADER.
     var col = [];
-    for (var i = 0; i < myBooks.length; i++) {
-        for (var key in myBooks[i]) {
+    for (var i = 0; i < data.length; i++) {
+        for (var key in data[i]) {
             if (col.indexOf(key) === -1) {
                 col.push(key);
             }
@@ -28,19 +27,19 @@ function CreateTableFromJSON(myBooks) {
 
 
     // ADD JSON DATA TO THE TABLE AS ROWS.
-    for (var i = 0; i < myBooks.length; i++) {
+    for (var i = 0; i < data.length; i++) {
 
         tr = body.insertRow(-1);
 
         for (var j = 0; j < col.length; j++) {
             var tabCell = tr.insertCell(-1);
-            tabCell.innerHTML = myBooks[i][col[j]];
+            tabCell.innerHTML = data[i][col[j]];
         }
     }
 
     // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
     table.setAttribute("id", "dyntable");
-    table.setAttribute("class", "mdl-data-table")
+    table.setAttribute("class", "display")
     var divContainer = document.getElementById("showData");
 
     divContainer.innerHTML = "";

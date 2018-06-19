@@ -1,6 +1,6 @@
 // SCRIPT FOR GETTING RESULT FROM DATABASE AS JSON OBJECT AND SEND TO   --> CreateTableFromJson(object)<---
 
-$(document).ready(function () {
+/*$(document).ready(function () {
     $('#dyntable').DataTable({
         columnDefs: [{
             targets: [0, 1, 2],
@@ -8,7 +8,7 @@ $(document).ready(function () {
                 }]
     });
 
-});
+}); */
 
 $(document).ready(function () {
 
@@ -67,7 +67,7 @@ $(document).ready(function () {
         }
 
         var flag = 0;
-        var url = "http://" + $('#address1').val() + ":4000/table";
+        var url = "http://" + $('#address1').val() + ":4003/table";
 
 
 
